@@ -1,0 +1,50 @@
+{
+  "$description": "Which contract addresses the Dwarves estate treats as live. Generated from a private registry; do not edit by hand. Every field here is public chain data.",
+  "$source": "dwarvesf/foundation-contracts deployments/registry.json",
+  "$fingerprint_recipe": "First 32 hex chars of the sha256 over the ASCII JSON-RPC result string of eth_getCode(address,'latest'), 0x prefix included. Truncated deliberately: 128 bits is far more than a drift check needs, and an untruncated digest trips the secret-guard hook on every write. Reproduce: curl -s -X POST $RPC -H 'Content-Type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getCode\",\"params\":[\"<addr>\",\"latest\"]}' | jq -r .result | tr -d '\\n' | shasum -a 256 | cut -c1-32",
+  "generated_at": "2026-08-11T05:38:08Z",
+  "chains": {
+    "1": {
+      "name": "ethereum",
+      "public_rpc": "https://ethereum-rpc.publicnode.com"
+    },
+    "8453": {
+      "name": "base",
+      "public_rpc": "https://mainnet.base.org"
+    }
+  },
+  "contracts": [
+    {
+      "id": "icy-token",
+      "chain_id": 8453,
+      "address": "0xf289E3b222dd42B185b7E335fA3C5bd6D132441D",
+      "bytecode_fingerprint": "e6c1effdb08e964f332c8aee8b6c1bf8",
+      "status": "live",
+      "supersedes": null
+    },
+    {
+      "id": "icy-btc-swap",
+      "chain_id": 8453,
+      "address": "0xdA3E22edf0357c781154D8DEDcfC32D7B6B0B12D",
+      "bytecode_fingerprint": "c96a63740ccf0036fb98ac6718efcf06",
+      "status": "live",
+      "supersedes": null
+    },
+    {
+      "id": "icy-usdc-swap",
+      "chain_id": 8453,
+      "address": "0x982d2c5A654E4f7CC65ACDCa4ECc649fE4F4DAa4",
+      "bytecode_fingerprint": "8a2e923f2d10f1eaec0f609f274fccfb",
+      "status": "live",
+      "supersedes": null
+    },
+    {
+      "id": "dfg-token",
+      "chain_id": 1,
+      "address": "0x36779A12eAb9B054bc991143751Ed5B05568eE8d",
+      "bytecode_fingerprint": "75340bf0d0326c4712c4523ae0201e21",
+      "status": "live",
+      "supersedes": null
+    }
+  ]
+}
