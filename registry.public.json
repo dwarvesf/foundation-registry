@@ -2,7 +2,7 @@
   "$description": "Which contract addresses the Dwarves estate treats as live. Generated from a private registry; do not edit by hand. Every field here is public chain data.",
   "$source": "dwarvesf/foundation-contracts deployments/registry.json",
   "$fingerprint_recipe": "First 32 hex chars of the sha256 over the ASCII JSON-RPC result string of eth_getCode(address,'latest'), 0x prefix included. Truncated deliberately: 128 bits is far more than a drift check needs, and an untruncated digest trips the secret-guard hook on every write. Reproduce: curl -s -X POST $RPC -H 'Content-Type: application/json' -d '{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getCode\",\"params\":[\"<addr>\",\"latest\"]}' | jq -r .result | tr -d '\\n' | shasum -a 256 | cut -c1-32",
-  "generated_at": "2026-08-11T05:38:08Z",
+  "generated_at": "2026-11-11T17:54:36Z",
   "chains": {
     "1": {
       "name": "ethereum",
